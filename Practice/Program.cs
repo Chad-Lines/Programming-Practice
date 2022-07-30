@@ -13,6 +13,7 @@ namespace Practice
             Console.WriteLine("\nWhat do you want to do? Enter the corresponding number:\n");
             Console.WriteLine("1. Perform a Binary Search");
             Console.WriteLine("2. Quick Sort");
+            Console.WriteLine("3. Find Repeated Character in String");
 
             Console.WriteLine("\n");
 
@@ -27,6 +28,9 @@ namespace Practice
                         break;
                     case 2:
                         QuickSortSelection();
+                        break;
+                    case 3:
+                        RepeatCharactersSelected();
                         break;
                     default:
                         Invalid();
@@ -71,6 +75,19 @@ namespace Practice
             Console.Write("\n");
 
             Again();
+        }
+
+        static void RepeatCharactersSelected()
+        {
+            
+            Console.WriteLine("\nPlease enter a word of your choice.\n");
+            string choice = Console.ReadLine();
+            char output = RepeatCharacters.FindRepeat(choice);
+
+            Console.WriteLine("\nRepeating character is: (-1 indicates no repeating character)\n");
+            Console.WriteLine(output);
+            Again();
+
         }
 
         #region HouseKeeping
