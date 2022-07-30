@@ -13,8 +13,9 @@ namespace Practice
             Console.WriteLine("\nWhat do you want to do? Enter the corresponding number:\n");
             Console.WriteLine("1. Perform a Binary Search");
             Console.WriteLine("2. Perform a Quick Sort");
-            Console.WriteLine("3. Find Repeated Character in String");
+            Console.WriteLine("3. Find the first Repeating Character in String");
             Console.WriteLine("4. Find the Min and Max in an Array");
+            Console.WriteLine("5. Get the odd numbers between 1 and 10");
 
             Console.WriteLine("\n");
 
@@ -35,6 +36,9 @@ namespace Practice
                         break;
                     case 4:
                         GetMinAndMaxFromArraySelection();
+                        break;
+                    case 5:
+                        OnlyOddNumbersSelection();
                         break;
                     default:
                         Invalid();
@@ -107,6 +111,23 @@ namespace Practice
 
             Again();
         }
+
+        static void OnlyOddNumbersSelection()
+        {
+            int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            Console.Write("\nWe will get only the odd numbers from this list: ");
+            foreach (int i in nums) { Console.Write("{0} ", i); }
+            Console.Write("\n");
+
+            List<int> list = OnlyOddNumbers.Get(nums);
+
+            foreach (int i in list) { Console.WriteLine("{0} ", i); }
+            Console.Write("\n");
+
+            Again();
+        }
+
 
         #region HouseKeeping
         static void Invalid()
