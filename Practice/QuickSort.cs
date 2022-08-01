@@ -8,13 +8,21 @@ namespace Practice;
 
 internal class QuickSort
 {
-    public static void Swap(int[] arr, int i, int j)
+    public static void Sort(int[] a, int start, int end)
     {
-        // Quickly swap two indexes in an array
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        // Make sure it's valid
+        if (start >= end) return;
+
+        // Rearrange the elements across pivot
+        int pivot = Partition(a, start, end);
+
+        // Recur on the subarray containing elements less than the pivot
+        Sort(a, start, pivot - 1);
+
+        // Recur on the subarray containing elements more than the pivot
+        Sort(a, pivot + 1, end);
     }
+
 
     public static int Partition(int[] a, int start, int end)
     {
@@ -44,18 +52,14 @@ internal class QuickSort
         return pIndex;
     }
 
-    public static void Sort(int[] a, int start, int end)
+    public static void Swap(int[] arr, int i, int j)
     {
-        // Make sure it's valid
-        if (start >= end) return;
-
-        // Rearrange the elements across pivot
-        int pivot = Partition(a, start, end);
-
-        // Recur on the subarray containing elements less than the pivot
-        Sort(a, start, pivot - 1);
-
-        // Recur on the subarray containing elements more than the pivot
-        Sort(a, pivot + 1, end);
+        // Quickly swap two indexes in an array
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
+
+
+
 }
