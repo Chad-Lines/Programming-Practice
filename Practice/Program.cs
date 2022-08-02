@@ -16,6 +16,7 @@ internal class Program
         Console.WriteLine("3. Find the first Repeating Character in String");
         Console.WriteLine("4. Find the Min and Max in an Array");
         Console.WriteLine("5. Get the odd numbers between 1 and 10");
+        Console.WriteLine("6. Return whether two words are anagrams");
 
         Console.WriteLine("\n");
 
@@ -39,6 +40,9 @@ internal class Program
                     break;
                 case 5:
                     OnlyOddNumbersSelection();
+                    break;
+                case 6:
+                    AnagramSelection();
                     break;
                 default:
                     Invalid();
@@ -126,6 +130,46 @@ internal class Program
         Console.Write("\n");
 
         Again();
+    }
+
+    static void AnagramSelection()
+    {
+        Console.Write("\nEnter the first word: ");        
+        string s1 = Console.ReadLine();
+
+        Console.Write("\nEnter the second word: ");
+        string s2 = Console.ReadLine();
+
+        Console.Write("\nHow would you like to check? ");
+        Console.Write("\n1. Comparing dictionaries ");
+        Console.Write("\n2. Comparing sorts\n\n");
+        string howToCheck = Console.ReadLine();
+
+        int choice;
+
+        if (Int32.TryParse(howToCheck, out choice))
+        {
+            switch (choice)
+            {
+                case 1:
+                    if (Anagram.CheckAnagramWithDicts(s1, s2)) Console.WriteLine("\nYes, they are anagrams");
+                    else Console.WriteLine("\nNo, they are not anagrams");
+                    break;
+                case 2:
+                    if (Anagram.CheckAnagramWithSort(s1, s2)) Console.WriteLine("\nYes, they are anagrams");
+                    else Console.WriteLine("\nNo, they are not anagrams");
+                    break;
+                default:
+                    Console.WriteLine("\nPlease enter a valid selection");
+                    break;
+            }
+        }
+        else
+        {
+            Invalid();
+        }
+        Again();
+
     }
 
 
