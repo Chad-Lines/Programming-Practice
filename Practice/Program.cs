@@ -184,7 +184,7 @@ internal class Program
         int[] array = RandomIntArray();        
 
         Console.WriteLine("\nConsider the following array:");
-        foreach (int i in array) { Console.WriteLine(i.ToString()); }
+        foreach (int i in array) { Console.WriteLine("{0} ", i); }
 
         Console.WriteLine("\nEnter any number that you see more than once: ");
 
@@ -195,9 +195,9 @@ internal class Program
             Array.Sort(array);
             int[] indexes = FirstAndLastPosition.Get(array, target);
             Console.WriteLine("\nThe indexes are: ");
-            foreach (int i in indexes) { Console.WriteLine(i.ToString()); }
+            foreach (int i in indexes) { Console.WriteLine("{0} ", i); }
             Console.WriteLine("\nThe sorted array is: ");
-            foreach (int i in array) { Console.WriteLine(i.ToString()); }
+            foreach (int i in array) { Console.WriteLine("{0} ", i); }
             Again();
         }
         else Invalid();
