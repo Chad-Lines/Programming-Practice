@@ -17,6 +17,7 @@ internal class Program
         Console.WriteLine("4. Find the Min and Max in an Array");
         Console.WriteLine("5. Get the odd numbers between 1 and 10");
         Console.WriteLine("6. Return whether two words are anagrams");
+        Console.WriteLine("7. Get first and last index in a sorted array");
 
         Console.WriteLine("\n");
 
@@ -43,6 +44,9 @@ internal class Program
                     break;
                 case 6:
                     AnagramSelection();
+                    break;
+                case 7:
+                    FirstAndLastSelection();
                     break;
                 default:
                     Invalid();
@@ -172,6 +176,48 @@ internal class Program
 
     }
 
+    static void FirstAndLastSelection()
+    {
+        int target;
+
+        // Generating a random array
+        int[] array = RandomIntArray();        
+
+        Console.WriteLine("\nConsider the following array:");
+        foreach (int i in array) { Console.WriteLine(i.ToString()); }
+
+        Console.WriteLine("\nEnter any number that you see more than once: ");
+
+        string t = Console.ReadLine();
+
+        if (Int32.TryParse(t, out target))
+        {
+            Array.Sort(array);
+            int[] indexes = FirstAndLastPosition.Get(array, target);
+            Console.WriteLine("\nThe indexes are: ");
+            foreach (int i in indexes) { Console.WriteLine(i.ToString()); }
+            Console.WriteLine("\nThe sorted array is: ");
+            foreach (int i in array) { Console.WriteLine(i.ToString()); }
+            Again();
+        }
+        else Invalid();
+    }
+
+    static int[] RandomIntArray()
+    {
+        int Min = 0;
+        int Max = 9;
+
+        int[] array = new int[10];
+        Random random = new Random();
+       
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = random.Next(Min, Max);
+        }
+
+        return array;
+    }
 
     #region HouseKeeping
     static void Invalid()
