@@ -184,21 +184,46 @@ internal class Program
         int[] array = RandomIntArray();        
 
         Console.WriteLine("\nConsider the following array:");
-        foreach (int i in array) { Console.WriteLine("{0} ", i); }
+        foreach (int i in array) { Console.Write("{0} ", i); }
 
-        Console.WriteLine("\nEnter any number that you see more than once: ");
+        Console.WriteLine("\n\nEnter any number that you see more than once: ");
 
         string t = Console.ReadLine();
 
         if (Int32.TryParse(t, out target))
         {
+            // Sort the array
             Array.Sort(array);
+            
+            // Get the first and last index for the specified target
             int[] indexes = FirstAndLastPosition.Get(array, target);
-            Console.WriteLine("\nThe indexes are: ");
-            foreach (int i in indexes) { Console.WriteLine("{0} ", i); }
-            Console.WriteLine("\nThe sorted array is: ");
-            foreach (int i in array) { Console.WriteLine("{0} ", i); }
-            Again();
+
+            // If one of the indexes is -1, then it is not found
+            if (indexes[0] == -1 || indexes[1] == -1)
+            {   
+                // Return the fact that a repetition was not found
+                Console.WriteLine("A repetition for that number is not found");
+
+                // Ask the user if they want to 'play' again
+                FirstAndLastSelection();
+            }
+
+            // Otherwise...
+            else
+            {
+                // Show the indexes
+                Console.Write("\nThe indexes are: ");
+                Console.Write($"[{indexes[0]},{indexes[1]}]");
+
+                // Show the sorted array
+                Console.Write("\nThe sorted array is: ");
+                foreach (int i in array) { Console.Write("{0} ", i); }
+                Console.Write("\n\n");
+                
+                // Ask the user if they want to 'play' again
+                Again();
+            }
+
         }
         else Invalid();
     }

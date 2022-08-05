@@ -19,59 +19,47 @@ internal class FirstAndLastPosition
         // Used to hold the index of the first occurance of 'target'
         int end = -1;
 
-        foreach (int i in arr)
+        for (int i = 0; i < arr.Length; i++)
         {
-            if (start == -1 && i == target)
-            {
-                start = i;
-                Console.WriteLine("Start found: " + i);
-            }
-            Console.WriteLine("i: " + i + ", target: " + target + ", i + 1: " + (i + 1));
-            Console.WriteLine("arr[arr.Length - 1]: " + arr[arr.Length - 1]);
+            // If we haven't determined the start yet, and the current index is the target
+            // then set 'start' to the current index
+            if (start == -1 && arr[i]== target) start = i;
 
-            if (i == arr[arr.Length - 1] && i + 1 == target)
-            {
-                continue;
-                Console.WriteLine("Continue.");
-            }
+            // Otherwise...
             else
             {
-                end = i;
-                break;
+                // While the current index is still equal to the target 
+                // (there should be at least two instances of the target)
+                while (arr[i] == target)
+                {
+                    // Check to see if we've reached the end of the array
+                    // If we have, then we assign the end index
+                    if (i == arr.Length - 1)
+                    {
+                        end = i;
+                        break;
+                    }
+
+                    // See if the next index does NOT equal the target
+                    // If that's true, we assign the end index 
+                    else if (arr[i + 1] != target)
+                    {
+                        end = i;
+                        break;
+                    }
+
+                    // If we're not at the end of the array, and the next
+                    // index still equals the target, then we increment the
+                    // index, and try again.
+                    else
+                    {
+                        i++;
+                        continue;
+                    }
+                }
             }
         }
-
-
-        // For each element in the array...
-        //foreach (int i in arr)
-        //for (int i = 0; i < arr.Length; i++)
-        //{
-        //    // If the element is the first occurance of target, set the start to i
-        //    if (start == -1 && arr[i] == target)
-        //    {
-        //        start = i;
-        //        Console.WriteLine("Start found: " + i);
-        //    }
-        //    Console.WriteLine("[" + i + "] = " + arr[i].ToString() + ", target: " + target);
-        //    Console.WriteLine("arr[i + 1] = " + arr[i + 1]);
-
-        //    // If we haven't reached the end of the array, and the next element
-        //    // in the array is still the target, then continue onward
-        //    if (i + 1 < arr.Length && arr[i + 1] == target)
-        //    {
-        //        continue;
-        //        Console.WriteLine("Continue.");
-        //    }
-
-        //    // If the array is ending, or the next element is NOT target,
-        //    // then we set end to i
-        //    else
-        //    {
-        //        end = i;
-        //        break;
-        //    }
-        //}
-        // Return the start and end indexes of the array
+        // Finally we return the start and end indexes
         return new int[] { start, end };
     }
 }
