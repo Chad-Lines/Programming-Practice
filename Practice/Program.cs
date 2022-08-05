@@ -55,11 +55,10 @@ internal class Program
         }
         else
         {
-            Invalid();                
+            Invalid();
         }
     }
             
-
     static void BinarySearchSelection()
     {
         int choice;
