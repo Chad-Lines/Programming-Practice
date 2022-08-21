@@ -60,9 +60,15 @@ public class PracticeTests
 
     #region Repeat Characters Test
 
+    /// <summary>
+    /// Testing RepeatCharacters with a string that has repeating characters
+    /// </summary>
     [TestMethod]
     public void TestRepeatCharactersTrue() => Assert.AreEqual(RepeatCharacters.FindRepeat(repeats), repeatingChar);
 
+    /// <summary>
+    /// Testing RepeatCharacters with a string that does not have repeating characters
+    /// </summary>
     [TestMethod]
     public void TestRepeatCharactersFalse() => Assert.AreEqual(RepeatCharacters.FindRepeat(noRepeats), noRepeatChar);
 
