@@ -1,8 +1,8 @@
 ﻿namespace Practice;
 
-internal class RepeatCharacters
+public class RepeatCharacters
 {
-    public static char FindRepeat(string str)
+    public static string FindRepeat(string str)
     {
         int notFound = -1;                                  // If a repeating character is not found, return -1
 
@@ -12,9 +12,9 @@ internal class RepeatCharacters
         {
             for (int j = i + 1; j < s.Length; j++)          // Get the second index (while excluding the first)
             {
-                if (s[i] == s[j]) return s[i];              // Compare the first to the second
+                if (s[i] == s[j]) return s[i].ToString();   // Compare the first to the second
             }   
         }
-        return (char)notFound;                              // Return the not found variable
+        return notFound.ToString();                         // Return the not found variable
     }
 }

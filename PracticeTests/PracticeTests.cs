@@ -16,6 +16,12 @@ public class PracticeTests
     private int target = 5;
     private int index = 4;
 
+    // Repeating Characters variables
+    private string repeats = "test";
+    private string repeatingChar = "t";
+    private string noRepeats = "desk";
+    private string noRepeatChar = "-1";
+
     #endregion
 
     #region Anagram Tests
@@ -45,11 +51,20 @@ public class PracticeTests
     /// </summary>
     [TestMethod]
     // Check that the index returned by BinarySearch matches our expected index
-    public void TestBinarySearch() => Assert.AreEqual(BinarySearch.Search(nums, target), index);    
+    public void TestBinarySearch() => Assert.AreEqual(BinarySearch.Search(nums, target), index);
 
     #endregion
 
+    #region TODO: QUICKSORT
+    #endregion
 
+    #region Repeat Characters Test
 
+    [TestMethod]
+    public void TestRepeatCharactersTrue() => Assert.AreEqual(RepeatCharacters.FindRepeat(repeats), repeatingChar);
 
+    [TestMethod]
+    public void TestRepeatCharactersFalse() => Assert.AreEqual(RepeatCharacters.FindRepeat(noRepeats), noRepeatChar);
+
+    #endregion
 }

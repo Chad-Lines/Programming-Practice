@@ -95,7 +95,7 @@ internal class Program
         
         Console.WriteLine("\nPlease enter a word of your choice.\n");
         string choice = Console.ReadLine();
-        char output = RepeatCharacters.FindRepeat(choice);
+        string output = RepeatCharacters.FindRepeat(choice);
 
         Console.WriteLine("\nRepeating character is: (-1 indicates no repeating character)\n");
         Console.WriteLine(output);
