@@ -1,6 +1,6 @@
 ﻿namespace Practice;
 
-internal class Anagram
+public class Anagram
 {
     public static bool CheckAnagramWithDicts(string s1, string s2)
     {        

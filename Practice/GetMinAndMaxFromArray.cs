@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Practice;
 
-namespace Practice
+internal class GetMinAndMaxFromArray
 {
-    internal class GetMinAndMaxFromArray
+    public static void Get(int[] array, out int min, out int max)
     {
-        public static void Get(int[] array, out int min, out int max)
-        {
-            min = array.Min();
-            max = array.Max();
-        }
+        min = array.Min();
+        max = array.Max();
     }
 }

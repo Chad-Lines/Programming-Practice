@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Practice;
+﻿namespace Practice;
 
 internal class Program
 {
