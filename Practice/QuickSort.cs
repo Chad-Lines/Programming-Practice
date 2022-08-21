@@ -1,6 +1,6 @@
 ﻿namespace Practice;
 
-internal class QuickSort
+public class QuickSort
 {
     public static void Sort(int[] a, int start, int end)
     {
