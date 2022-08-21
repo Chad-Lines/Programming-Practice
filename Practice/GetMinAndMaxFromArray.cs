@@ -1,6 +1,6 @@
 ﻿namespace Practice;
 
-internal class GetMinAndMaxFromArray
+public class GetMinAndMaxFromArray
 {
     public static void Get(int[] array, out int min, out int max)
     {

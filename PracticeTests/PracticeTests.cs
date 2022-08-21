@@ -22,6 +22,11 @@ public class PracticeTests
     private string noRepeats = "desk";
     private string noRepeatChar = "-1";
 
+    // Get Min and Max from Array variables
+    private int[] minMaxArray = { 5, 7, 1, 4, 2, 8, 4, 8, 1, 3, 5 };
+    private int min = 1;
+    private int max = 8;
+
     #endregion
 
     #region Anagram Tests
@@ -73,4 +78,20 @@ public class PracticeTests
     public void TestRepeatCharactersFalse() => Assert.AreEqual(RepeatCharacters.FindRepeat(noRepeats), noRepeatChar);
 
     #endregion
+
+    #region Get Min And Max From Array Test
+
+    /// <summary>
+    /// Testing the GetMinAndMaxFromArray class
+    /// </summary>
+    [TestMethod]
+    public void TestMinAndMaxFromArray()
+    {
+        GetMinAndMaxFromArray.Get(minMaxArray, out int _min, out int _max); // Running the method on the array
+        Assert.AreEqual(min, _min);                                         // Comparing expected and actual min
+        Assert.AreEqual(max, _max);                                         // Comparing expected and actual max
+    }
+
+    #endregion
+
 }
