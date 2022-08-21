@@ -44,7 +44,8 @@ public class PracticeTests
     /// Testing the BinarySearch class
     /// </summary>
     [TestMethod]
-    public void TestBinarySearch() => Assert.AreEqual(BinarySearch.Search(nums, target), index);
+    // Check that the index returned by BinarySearch matches our expected index
+    public void TestBinarySearch() => Assert.AreEqual(BinarySearch.Search(nums, target), index);    
 
     #endregion
 
