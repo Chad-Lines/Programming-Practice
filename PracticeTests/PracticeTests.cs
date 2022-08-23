@@ -27,6 +27,10 @@ public class PracticeTests
     private int min = 1;
     private int max = 8;
 
+    // Only Odd Numbers Variables
+    private int[] onlyOddNumsInput = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    private int[] onlyOddNumsExpected = { 1, 3, 5, 7, 9 };
+
     #endregion
 
     #region Anagram Tests
@@ -90,6 +94,16 @@ public class PracticeTests
         GetMinAndMaxFromArray.Get(minMaxArray, out int _min, out int _max); // Running the method on the array
         Assert.AreEqual(min, _min);                                         // Comparing expected and actual min
         Assert.AreEqual(max, _max);                                         // Comparing expected and actual max
+    }
+
+    #endregion
+
+    #region Only Odd Numbers Test
+
+    [TestMethod]
+    public void OnlyOddNumbersTest()
+    {
+        Assert.AreEqual(onlyOddNumsExpected, OnlyOddNumbers.Get(onlyOddNumsInput));
     }
 
     #endregion

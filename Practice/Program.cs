@@ -125,7 +125,7 @@ internal class Program
         foreach (int i in nums) { Console.Write("{0} ", i); }
         Console.Write("\n");
 
-        List<int> list = OnlyOddNumbers.Get(nums);
+        int[] list = OnlyOddNumbers.Get(nums);
 
         foreach (int i in list) { Console.WriteLine("{0} ", i); }
         Console.Write("\n");

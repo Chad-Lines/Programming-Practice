@@ -1,15 +1,15 @@
 ﻿namespace Practice;
 
-internal class OnlyOddNumbers
+public class OnlyOddNumbers
 {
-    public static List<int> Get(int[] nums)
+    public static int[] Get(int[] nums)
     {
-        List<int> output = new();       // Creating an empty list
+        int[] output = new int[5];      // Creating an empty array
 
         foreach (int i in nums)         // For each int in the array
         {
             if (i % 2 == 0) continue;   // If it's divisible by 2 (i.e. even), move on
-            else output.Add(i);         // otherwise (i.e. if it's odd), add it to the list
+            else output.Append(i);      // otherwise (i.e. if it's odd), add it to the array
         }
 
         return output;                  // return the list
