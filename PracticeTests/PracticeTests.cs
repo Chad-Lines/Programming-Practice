@@ -16,6 +16,11 @@ public class PracticeTests
     private int target = 5;
     private int index = 4;
 
+    // QuickSort Variables
+    private int[] quickSortArrayUnsorted = { 9, -3, 5, 2, 6, 8, -6, 1, 3 };
+    private int quickSortArrayLength = 9;
+    private int[] quickSortArrayExpected = { -6, -3, 1, 2, 3, 5, 6, 8, 9 };
+
     // Repeating Characters variables
     private string repeats = "test";
     private string repeatingChar = "t";
@@ -70,7 +75,14 @@ public class PracticeTests
 
     #endregion
 
-    #region TODO: QUICKSORT
+    #region QuickSort
+
+    [TestMethod]
+    private void QuickSortArrayTest()
+    {
+        int[] quickSortArraySorted = QuickSort.Sort(quickSortArrayUnsorted, 0, quickSortArrayLength);
+        CollectionAssert.AreEqual(quickSortArrayExpected, quickSortArraySorted);
+    }
     #endregion
 
     #region Repeat Characters Test
@@ -107,11 +119,7 @@ public class PracticeTests
     #region Only Odd Numbers Test
 
     [TestMethod]
-    public void OnlyOddNumbersTest()
-    {
-        CollectionAssert.AreEqual(onlyOddNumsExpected, OnlyOddNumbers.Get(onlyOddNumsInput));
-        //Assert.AreEqual(onlyOddNumsExpected, OnlyOddNumbers.Get(onlyOddNumsInput));
-    }
+    public void OnlyOddNumbersTest() => CollectionAssert.AreEqual(onlyOddNumsExpected, OnlyOddNumbers.Get(onlyOddNumsInput));
 
     #endregion
 

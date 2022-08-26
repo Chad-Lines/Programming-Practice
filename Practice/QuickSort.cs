@@ -2,10 +2,10 @@
 
 public class QuickSort
 {
-    public static void Sort(int[] a, int start, int end)
+    public static int[] Sort(int[] a, int start, int end)
     {
         // Make sure it's valid
-        if (start >= end) return;
+        if (start >= end) return null;
 
         // Rearrange the elements across pivot
         int pivot = Partition(a, start, end);
@@ -15,6 +15,9 @@ public class QuickSort
 
         // Recur on the subarray containing elements more than the pivot
         Sort(a, pivot + 1, end);
+        
+        // Return the array
+        return a;
     }
 
 

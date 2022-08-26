@@ -81,10 +81,10 @@ internal class Program
         Console.Write("\nWe will quicksort the following numbers: ");
         foreach (int i in array) { Console.Write("{0} ", i); }
 
-        QuickSort.Sort(array, 0, array.Length - 1);
+        int[] sortedArray = QuickSort.Sort(array, 0, array.Length - 1);
 
         Console.Write("\nViola! ");
-        foreach (int i in array) { Console.Write("{0} ", i); }
+        foreach (int i in sortedArray) { Console.Write("{0} ", i); }
         Console.Write("\n");
 
         Again();
