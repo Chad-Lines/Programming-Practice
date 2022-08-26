@@ -1,6 +1,6 @@
 ﻿namespace Practice;
 
-internal class FirstAndLastPosition
+public class FirstAndLastPosition
 {
     // Given a sorted array of integers (arr) and an integer of 'target', find the index
     // of the first and last position of 'target' in 'arr'. If the target can't be found,

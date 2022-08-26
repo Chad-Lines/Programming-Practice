@@ -31,6 +31,12 @@ public class PracticeTests
     private int[] onlyOddNumsInput = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     private int[] onlyOddNumsExpected = { 1, 3, 5, 7, 9 };
 
+    // First And Last Variables
+    private int[] firstAndLastArray = { 1, 2, 2, 3, 5, 5, 5, 6, 9, 8, 7 };
+    private int firstAndLastTarget = 5;
+    private int expectedFirstIdx = 4;
+    private int expectedLastIdx = 6;
+
     #endregion
 
     #region Anagram Tests
@@ -103,9 +109,21 @@ public class PracticeTests
     [TestMethod]
     public void OnlyOddNumbersTest()
     {
-        Assert.AreEqual(onlyOddNumsExpected, OnlyOddNumbers.Get(onlyOddNumsInput));
+        CollectionAssert.AreEqual(onlyOddNumsExpected, OnlyOddNumbers.Get(onlyOddNumsInput));
+        //Assert.AreEqual(onlyOddNumsExpected, OnlyOddNumbers.Get(onlyOddNumsInput));
     }
 
     #endregion
 
+    #region First And Last Test
+    [TestMethod]
+    public void FirstAndLastTest()
+    {
+        int[] indexes = FirstAndLastPosition.Get(firstAndLastArray, firstAndLastTarget);
+
+        Assert.AreEqual(indexes[0], expectedFirstIdx);
+        Assert.AreEqual(indexes[1], expectedLastIdx);
+    }
+
+    #endregion
 }
